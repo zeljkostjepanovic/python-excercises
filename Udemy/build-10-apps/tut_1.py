@@ -15,8 +15,8 @@ HELLO_TUPLE = (21, 32)
 HELLO_LIST = ["Hello,", "this", "is", "a", "list"]
 HELLO_DICT = {"first name": "Zeljko",
               "last name": "Stjepanovic",
-              "year born": "1981",
-              "eye color": "brown",
+              "year born": "1100",
+              "eye color": "white",
               "married": "yes"}
 
 print(HELLO_STR)
