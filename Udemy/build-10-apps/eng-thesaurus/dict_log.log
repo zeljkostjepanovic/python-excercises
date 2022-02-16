@@ -1,0 +1,115 @@
+ERROR:root:Error:
+Traceback (most recent call last):
+  File "./dict.py", line 14, in lookup
+    return data[word]
+KeyError: 'prdez'
+ERROR:root:Error:
+Traceback (most recent call last):
+  File "./dict.py", line 14, in lookup
+    return data[word]
+KeyError: 'opalac'
+ERROR:root:Error:
+Traceback (most recent call last):
+  File "./dict.py", line 14, in lookup
+    return data[word]
+KeyError: 'ne seri'
+ERROR:root:2021-07-15_20:32:24 Error:
+Traceback (most recent call last):
+  File "./dict.py", line 17, in lookup
+    return data[word]
+KeyError: 'prdez'
+ERROR:root:2021-07-15_20:33:06 Error:
+Traceback (most recent call last):
+  File "./dict.py", line 17, in lookup
+    return data[word]
+KeyError: 'sad ga trpaj'
+ERROR:root:Error:
+Traceback (most recent call last):
+  File "./dict.py", line 17, in lookup
+    return data[word]
+KeyError: 'prduljica'
+ERROR:root:Error:
+Traceback (most recent call last):
+  File "./dict.py", line 17, in lookup
+    return data[word]
+KeyError: 'frdljevac'
+ERROR:root:2021-07-15_20:36:34
+Traceback (most recent call last):
+  File "./dict.py", line 17, in lookup
+    return data[word]
+KeyError: 'rokstedi'
+ERROR:root:2021-07-15_20:40:58
+Traceback (most recent call last):
+  File "./dict.py", line 23, in lookup
+    return data[word]
+KeyError: 'trpaj'
+ERROR:root:2021-07-15_20:54:46
+Traceback (most recent call last):
+  File "./dict.py", line 23, in lookup
+    return data[word]
+KeyError: 'prdez'
+ERROR:root:2021-07-15_21:00:29
+Traceback (most recent call last):
+  File "./dict.py", line 23, in lookup
+    return data[word]
+KeyError: <built-in method lower of str object at 0x7f41d941c458>
+ERROR:root:2021-07-15_21:00:35
+Traceback (most recent call last):
+  File "./dict.py", line 23, in lookup
+    return data[word]
+KeyError: <built-in method lower of str object at 0x7f846e751458>
+ERROR:root:2021-07-15_21:00:51
+Traceback (most recent call last):
+  File "./dict.py", line 23, in lookup
+    return data[word.lower]
+KeyError: <built-in method lower of str object at 0x7fd39c3b9458>
+ERROR:root:2021-07-15_21:01:22
+Traceback (most recent call last):
+  File "./dict.py", line 24, in lookup
+    return data[word]
+KeyError: <built-in method lower of str object at 0x7f4703caa458>
+ERROR:root:2021-07-15_21:02:06
+Traceback (most recent call last):
+  File "./dict.py", line 23, in lookup
+    return data[word]
+KeyError: '1389'
+ERROR:root:2021-07-15_21:02:28
+Traceback (most recent call last):
+  File "./dict.py", line 23, in lookup
+    return data[word]
+KeyError: 'giant pussy'
+ERROR:root:2021-07-15_21:03:34
+Traceback (most recent call last):
+  File "./dict.py", line 24, in lookup
+    return data[word]
+TypeError: unhashable type: 'list'
+ERROR:root:2021-07-15_21:04:38
+Traceback (most recent call last):
+  File "./dict.py", line 24, in lookup
+    return data[word]
+KeyError: ''
+ERROR:root:2021-07-15_21:05:08
+Traceback (most recent call last):
+  File "./dict.py", line 24, in lookup
+    return data[word]
+KeyError: 'g'
+ERROR:root:2021-07-15_21:06:43
+Traceback (most recent call last):
+  File "./dict.py", line 24, in lookup
+    return data[word]
+KeyError: 'giant pussy'
+ERROR:root:2021-07-15_21:07:02
+Traceback (most recent call last):
+  File "./dict.py", line 24, in lookup
+    return data[word]
+KeyError: 'g'
+ERROR:root:2021-07-15_21:08:01
+Traceback (most recent call last):
+  File "./dict.py", line 23, in lookup
+    return data[word]
+KeyError: 'motherfucker'
+ERROR:root:2021-07-15_21:08:04
+Traceback (most recent call last):
+  File "./dict.py", line 23, in lookup
+    return data[word]
+KeyError: 'fucker'
