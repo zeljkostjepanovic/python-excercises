@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 print("todai".replace("i", "y"))
 
 x = [1, 2, 3]

@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 def my_function_z(x):
     """Calculate how many hours in the provided number of weeks"""
     if x == 1:
