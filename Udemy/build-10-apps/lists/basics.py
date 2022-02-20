@@ -13,7 +13,21 @@ print(monday_temperatures)
 print(monday_temperatures[1:4])
 print(monday_temperatures[-4:-1])
 
-my_hello_string = 'hello'
-print(my_hello_string[1])
-print(my_hello_string[-1])
-print(my_hello_string[:3])
+my_hello_list = ['hello']
+print(my_hello_list[0])
+print(my_hello_list[-1])
+print(my_hello_list[:3])
+
+my_second_list = ['how', 'are', 'you', 'hello']
+my_hello_list.extend(my_second_list)
+print(my_hello_list)
+print(my_hello_list.count('hello'))
+
+x = my_hello_list.copy()
+
+print(x)
+print(x.count('how'))
+print(x.index('hello'))
+
+my_hello_list.insert(len(my_hello_list), 'Bob')
+print(my_hello_list[-1])
