@@ -43,11 +43,20 @@ print(checkpasslength("ThisismypasswordNOT"))
 
 
 def tempcheck(x):
-    if x > 7:
+    if x > 25:
+        return "Hot"
+    elif x >= 15 and x <= 25:
         return "Warm"
     else:
         return "Cold"
 
 print(tempcheck(5))
 print(tempcheck(7))
-print(tempcheck(10))
+print(tempcheck(15))
+print(tempcheck(25))
+print(tempcheck(26))
+
+def cubevolume(a):
+    return a*a*a
+
+print(cubevolume(3))
