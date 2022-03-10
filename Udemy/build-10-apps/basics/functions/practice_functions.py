@@ -24,3 +24,14 @@ def ounce_to_ml(x):
 
 
 print(ounce_to_ml(3))
+
+def cels_to_kelvin(x):
+    """Convert celsius to kelvin."""
+    return x + 273.15
+
+print(cels_to_kelvin(17.5))
+
+monday_temps = [3,4.5,12,16]
+
+for temp in monday_temps:
+    print(cels_to_kelvin(temp))

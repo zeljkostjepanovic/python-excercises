@@ -26,3 +26,9 @@ for color in colors:
         print(color)
     else:
         continue
+
+
+student_grades = {'Mary': 9.1, 'John': 8.8, 'Kevin': 7.5, 'Roger': 9}
+
+for key,value in student_grades.items():
+    print('{} got a {}'.format(key, value))
