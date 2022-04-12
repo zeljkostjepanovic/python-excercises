@@ -1,25 +1,17 @@
 #!/usr/bin/env python3
 
-def is_question(x):
-    if x.startswith("Why") or x.startswith("Where")\
-    or x.startswith("Where") or x.startswith("Who")\
-    or x.startswith("How") or x.startswith("When"):
-        return True
+def sentence_maker(x):
+    interrogatives = ('Why', 'Where', 'Who', 'How', 'When', 'What')
+    x = x.capitalize()
+    if x.startswith(interrogatives):
+        return "{}?".format(x)
     else:
-        return False
+        return "{}.".format(x)
 
 
-
-sentences = []
- 
 while True:
-    sentence = input("Say something: ").capitalize()
-    if sentence == "\end":
-        break
-    elif is_question(sentence):
-        sentence = sentence + "?"
+    sentence = input("Say something: ")
+    if sentence != "\end":
+        print(sentence_maker(sentence))
     else:
-        sentence = sentence + "."
-    sentences.append(sentence)
-
-print(*sentences)
+        break
