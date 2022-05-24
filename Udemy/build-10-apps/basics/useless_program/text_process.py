@@ -9,9 +9,15 @@ def sentence_maker(x):
         return "{}.".format(x)
 
 
+results = []
+
 while True:
-    sentence = input("Say something: ")
-    if sentence != "\end":
-        print(sentence_maker(sentence))
-    else:
+    user_input = input("Say something: ")
+    if "\end" in user_input:
+        print("==============")
+        print("Your input below:")
+        print("==============")
+        print(user_input, sep=" ")
         break
+    else:
+        results.append(sentence_maker(user_input))
