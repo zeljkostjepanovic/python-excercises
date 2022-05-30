@@ -35,3 +35,9 @@ monday_temps = [3,4.5,12,16]
 
 for temp in monday_temps:
     print(cels_to_kelvin(temp))
+
+
+def concat_str(a, b):
+    return a + b
+
+print(concat_str("something", "else"))
