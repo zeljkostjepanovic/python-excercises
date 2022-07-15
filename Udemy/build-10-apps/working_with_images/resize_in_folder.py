@@ -40,4 +40,4 @@ def resize_images(path, x, y):
             continue
 
 
-resize_images("/home/zb/Documents/Tutorials/Python/Udemy/build-10-apps/working_with_images/sample", 1024, 768)
+resize_images("sample", 1024, 768)
