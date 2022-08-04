@@ -4,3 +4,5 @@ Old
 *.ipynb
 *.csv
 *.jpg
+*.pyc
+*.html
