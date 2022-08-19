@@ -1,4 +1,5 @@
-import cv2, pandas
+import pandas
+import cv2
 from datetime import datetime
 from bokeh.io import show,output_file
 from bokeh.plotting import figure
@@ -15,7 +16,7 @@ while True:
     status = 0
     timestamp = None
 
-    gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(frame,cv2.COLOR_RGB2GRAY)
     gray=cv2.GaussianBlur(gray,(21,21),0)
 
     if first_frame is None:
