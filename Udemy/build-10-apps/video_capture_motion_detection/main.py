@@ -1,5 +1,9 @@
-import cv2, time, pandas
+import pandas
+import cv2
 from datetime import datetime
+from bokeh.io import show,output_file
+from bokeh.plotting import figure
+from yaml import parse
 
 first_frame=None
 status_list=[None,None]
@@ -12,7 +16,7 @@ while True:
     status = 0
     timestamp = None
 
-    gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(frame,cv2.COLOR_RGB2GRAY)
     gray=cv2.GaussianBlur(gray,(21,21),0)
 
     if first_frame is None:
@@ -34,6 +38,9 @@ while True:
         cv2.rectangle(frame, (x,y),(x+w, y+h), (0,255,0), 3)
 
     status_list.append(status)
+
+    status_list = status_list[-2:]
+
 
     if status_list[-1] == 1 and status_list[-2]==0:
         times.append(datetime.now())
@@ -57,13 +64,9 @@ print(status_list)
 print(times)
 
 for i in range(0,len(times), 2):
-    df = df.append({"Start":times[i], "End":times[i+1]}, ignore_index=True)
+    df = pandas.concat([df, pandas.DataFrame(data={"Start" : [times[i]], "End": [times[i+1]]})])
 
 df.to_csv("Detections.csv")
-
-
-graph = pandas.read_csv("Detections.csv")
-
 
 video.release()
 cv2.destroyAllWindows
