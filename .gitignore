@@ -6,3 +6,6 @@ Old
 *.jpg
 *.pyc
 *.html
+*.wav
+.gitignore
+Games/Pong/tock.wav
