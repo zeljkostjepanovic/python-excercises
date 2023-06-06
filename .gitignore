@@ -8,4 +8,7 @@ Old
 *.html
 *.wav
 .gitignore
-Games/Pong/tock.wav
+tock.wav
+settings.json
+vscode/todos.txt
+*.txt
