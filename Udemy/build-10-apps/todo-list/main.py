@@ -4,14 +4,27 @@ import os
 current_dir = os.path.dirname(__file__)
 os.chdir(current_dir)
 
-### Function to read todos from file
-def get_todos(filepath):
+def get_todos(filepath='todos.txt'):
+    """ Read a text file and return list of todos
+
+    Args:
+        filepath (string): path of the text file with saved todos,
+        with each todo in a separate line
+
+    Returns:
+        list: returns a list of strings (todos)
+    """
     with open(filepath, 'r') as file:
         todos = file.readlines()
     return todos
 
-### Function to write todos to a file
 def write_todos(filepath,content):
+    """ Write a list of todos to a file
+
+    Args:
+        filepath (string): Path of the file where todos are saved
+        content (list): List of todos to write to file, one line for each
+    """
     with open(filepath, 'w') as file:
         file.writelines(content)
 
@@ -22,7 +35,7 @@ while True:
     if user_action.startswith("add"):
         todo = user_action[4:] + "\n"
             
-        todos = get_todos("todos.txt")
+        todos = get_todos()
         
         if len(todo) > 1:
             todos.append(todo)
@@ -32,7 +45,7 @@ while True:
            continue
             
     elif user_action.startswith("show"):
-        todos = get_todos("todos.txt")
+        todos = get_todos()
                         
         for index,item in enumerate(todos, start=1):
             item = item.strip("\n")
@@ -41,7 +54,7 @@ while True:
             
     elif user_action.startswith("edit"):
         try:
-            todos = get_todos("todos.txt")
+            todos = get_todos()
         
             for index,item in enumerate(todos, start=1):
                 item = item.strip("\n")
@@ -60,7 +73,7 @@ while True:
         
     elif user_action.startswith("complete"):
         try:
-            todos = get_todos("todos.txt")
+            todos = get_todos()
 
             
             for index,item in enumerate(todos, start=1):
