@@ -1,5 +1,7 @@
 import time
 
+start = time.time()
+
 # Print iterations progress
 def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█', printEnd = "\r"):
     """
@@ -24,7 +26,7 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
         
         
 # A List of Items
-num_of_aliens = range(0, 50000)
+num_of_aliens = range(0, 300000)
 
 # Initial call to print 0% progress
 printProgressBar(0, len(num_of_aliens), prefix = 'Working:', suffix = 'Done', length = 50)
@@ -43,3 +45,6 @@ for alien_num in num_of_aliens:
 
 # How many?
 print(len(aliens))
+
+end = time.time()
+print(end - start)
