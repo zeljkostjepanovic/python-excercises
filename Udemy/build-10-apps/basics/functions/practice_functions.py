@@ -40,37 +40,15 @@
 # def concat_str(a, b):
 #     return a + b
 
-# def convert(feet,inches):
-#     """ Convert feet and inches to meters
-
-#     Args:
-#         feet,inches (integers or floats): takes two numbers
+from parser_func import parse, convert
         
-#     Return:
-#         meters (float): feet and inches converted to meters 
-#     """
-#     try:
-#         meters = feet * 0.3048 + inches * 0.0254
-#         return meters
-#     except:
-#         return "Invalid input"
-    
-# def parse(feet_inches):
-#     try:
-#         parts = feet_inches.split(" ")
-#         feet = float(parts[0])
-#         inches = float(parts[1])
-#         return {"feet": feet, "inches": inches}
-#     except:
-#         raise ValueError("Could not parse")
-        
-# feet_inches = input("Enter feet and inches: ")
+feet_inches = input("Enter feet and inches: ")
 
 
-# parsed = parse(feet_inches)
-# result = convert(parsed['feet'],parsed['inches'])
+parsed = parse(feet_inches)
+result = convert(parsed['feet'],parsed['inches'])
 
-# print(result)
+print(result)
 
 # def get_nr_items(list_of_strings):
 #     newlist = list(list_of_strings.split(","))
@@ -79,10 +57,10 @@
 
 # print(get_nr_items('apple,banana,orange'))
 
-def calculate_time(h, g=9.80665):
-    t = (2 * h / g) ** 0.5
-    return t
+# def calculate_time(h, g=9.80665):
+#     t = (2 * h / g) ** 0.5
+#     return t
     
     
-time = calculate_time(1000)
-print(time)
+# time = calculate_time(1000)
+# print(time)
