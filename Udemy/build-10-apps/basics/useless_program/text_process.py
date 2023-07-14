@@ -13,7 +13,7 @@ results = []
 
 while True:
     user_input = input("Say something: ")
-    if "\end" in user_input:
+    if '/end' in user_input:
         print("==============")
         print("Your input below:")
         print("==============")
@@ -21,3 +21,5 @@ while True:
         break
     else:
         results.append(sentence_maker(user_input))
+        print(results)
+

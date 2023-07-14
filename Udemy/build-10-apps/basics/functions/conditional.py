@@ -1,6 +1,3 @@
-from tabnanny import check
-
-
 def mean_func(x):
     """Calculate mean for a list of values or dictionary values."""
     if type(x) == list:
