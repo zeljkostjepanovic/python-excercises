@@ -14,11 +14,12 @@ list_box = sg.Listbox(values=functions.get_todos(), key="todos",
 
 edit_button = sg.Button('Edit')
 
+layout = [[label],
+          [input_box, add_button],
+          [list_box,edit_button],]
+
 window = sg.Window('My TODOS', 
-                   layout=[[label], 
-                           [input_box, add_button],
-                           [list_box,edit_button],
-                           [complete_button]], 
+                   layout=layout, 
                    font=("Sans", 10))
 
 while True:
