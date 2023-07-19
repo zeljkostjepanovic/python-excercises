@@ -1,4 +1,0 @@
-bokeh==2.4.3
-pandas==1.4.3
-PyYAML==6.0
-opencv-python=4.6.0
