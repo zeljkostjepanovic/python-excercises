@@ -1,23 +1,26 @@
 from modules import functions
 import PySimpleGUI as sg
 import os
+import time
 
-sg.theme('Topanga')
+sg.theme('Dark2')
 ### Make sure to run the program in the same working directory where the script is located
 current_dir = os.path.dirname(__file__)
 os.chdir(current_dir)
 
+clock = sg.Text('', key = 'clock')
 label = sg.Text('Type in a task')
 input_box = sg.InputText(tooltip="Enter todo", key="todo")
 add_button = sg.Button('Add')
 list_box = sg.Listbox(values=functions.get_todos(), key="todos", 
-                      enable_events=True, size=[45, 10])
+                      enable_events=True, size=(50,15))
 
 edit_button = sg.Button('Edit')
 complete_button = sg.Button('Complete')
 exit_button = sg.Button('Exit')
 
-layout = [[label],
+layout = [[clock],
+          [label],
           [input_box, add_button],
           [list_box, edit_button, complete_button],
           [exit_button]]
@@ -27,7 +30,8 @@ window = sg.Window('My TODOS',
                    font=("Ubuntu", 9))
 
 while True:
-    event, values = window.read()
+    event, values = window.read(timeout=500)
+    window['clock'].update(value=time.strftime("%H:%M:%S"))
     print("1 ", event)
     print("2 ", values)
     match event:
