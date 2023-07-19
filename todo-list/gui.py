@@ -2,6 +2,7 @@ from modules import functions
 import PySimpleGUI as sg
 import os
 
+sg.theme('Topanga')
 ### Make sure to run the program in the same working directory where the script is located
 current_dir = os.path.dirname(__file__)
 os.chdir(current_dir)
@@ -22,42 +23,47 @@ layout = [[label],
           [exit_button]]
 
 window = sg.Window('My TODOS', 
-                   layout=layout, 
-                   font=("Sans", 10))
+                   layout=layout,
+                   font=("Ubuntu", 9))
 
 while True:
     event, values = window.read()
     print("1 ", event)
     print("2 ", values)
-    print("3 ", values['todos'])
     match event:
         case 'Add':
             todos = functions.get_todos()
-            new_todo = values['todo'] + "\n"
-            if new_todo in todos:
-                sg.popup("This task already exists")
-            else:
-                todos.append(new_todo)
-                functions.write_todos(todos)
+            new_todo = values['todo']+"\n"
+            todos.append(new_todo)
+            functions.write_todos(todos)
             window['todos'].update(values=todos)
 
         case 'Edit':
-            todo_to_edit = values['todos'][0]
-            new_todo = values['todo']
-            todos = functions.get_todos()
-            index = todos.index(todo_to_edit)
-            todos[index] = new_todo+"\n"
-            functions.write_todos(todos)
-            window['todos'].update(values=todos)
+            try:
+                todo_to_edit = values['todos'][0]
+                new_todo = values['todo']
+                
+                todos = functions.get_todos()
+                index = todos.index(todo_to_edit)
+                todos[index] = new_todo
+                functions.write_todos(todos)
+        
+                window['todos'].update(values=todos)
+            except IndexError as e:
+                sg.popup("Please select a task")
+                continue
 
         case 'Complete':
-            todo_to_complete = values['todos'][0]
-            todos = functions.get_todos()
-            index = todos.index(todo_to_complete)
-            todos.pop(index)
-            functions.write_todos(todos)
-            window['todos'].update(values=todos)
-            
+            try:
+                todo_to_complete = values['todos'][0]
+                todos = functions.get_todos()
+                todos.remove(todo_to_complete)
+                functions.write_todos(todos)
+                window['todos'].update(values=todos)
+            except IndexError:
+                sg.popup("Please select a task")
+                continue
+        
         case 'Exit':
             break
         
