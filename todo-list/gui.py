@@ -3,7 +3,7 @@ import PySimpleGUI as sg
 import os
 import time
 
-sg.theme('Dark2')
+sg.theme('SystemDefaultForReal')
 ### Make sure to run the program in the same working directory where the script is located
 current_dir = os.path.dirname(__file__)
 os.chdir(current_dir)
@@ -11,7 +11,11 @@ os.chdir(current_dir)
 clock = sg.Text('', key = 'clock')
 label = sg.Text('Type in a task')
 input_box = sg.InputText(tooltip="Enter todo", key="todo")
-add_button = sg.Button('Add')
+
+add_button = sg.Button(image_source="add.png",
+                       mouseover_colors="lightblue", 
+                       tooltip="Add a task", key="Add")
+
 list_box = sg.Listbox(values=functions.get_todos(), key="todos", 
                       enable_events=True, size=(50,15))
 
@@ -37,10 +41,13 @@ while True:
     match event:
         case 'Add':
             todos = functions.get_todos()
-            new_todo = values['todo']+"\n"
-            todos.append(new_todo)
-            functions.write_todos(todos)
-            window['todos'].update(values=todos)
+            if values['todo'] != "":
+                new_todo = values['todo']+"\n"
+                todos.append(new_todo)
+                functions.write_todos(todos)
+                window['todos'].update(values=todos)
+            else:
+                sg.popup("Please enter a task to add.")
 
         case 'Edit':
             try:

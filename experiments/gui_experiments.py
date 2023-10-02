@@ -1,17 +1,20 @@
 import PySimpleGUI as sg
 from functions import parser_func
 
+sg.theme("Black")
     
 feet_label = sg.Text("Feet")
-feet_input = sg.Input(key="feet")
+feet_input = sg.Input(default_text="0", key="feet")
 
 inches_label = sg.Text("Inches")   
-inches_input = sg.Input(key="inches")
+inches_input = sg.Input(default_text="0", key="inches")
 
 convert_button = sg.Button("Convert")
 result_label = sg.Text("")
 
-layout = [[feet_label, feet_input],[inches_label, inches_input],[convert_button,result_label]]
+exit_button = sg.Button("Exit")
+
+layout = [[feet_label, feet_input],[inches_label, inches_input],[convert_button, exit_button,  result_label]]
 
 window = sg.Window("Feet to Meters", layout=layout)
 
@@ -25,9 +28,10 @@ while True:
             result_label.update(meters)
             window.refresh()
         except ValueError as e:
+            sg.popup("Please provide two numbers.")
             result_label.update(f"Invalid Input:{e}")
             window.refresh()
             
-    elif event == sg.WIN_CLOSED:
+    elif event in (sg.WIN_CLOSED, "Exit"):
         break
     

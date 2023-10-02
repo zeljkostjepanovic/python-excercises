@@ -1,4 +1,8 @@
 import json
+import os
+
+current_dir = os.path.dirname(__file__)
+os.chdir(current_dir)
 
 with open('questions.json', 'r') as file:
     content = file.read()

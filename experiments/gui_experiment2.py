@@ -5,11 +5,12 @@ feet_input = sg.InputText()
 inches_label = sg.Text('Enter inches')
 inches_input= sg.InputText()
 convert_button = sg.Button('Convert')
+exit_button = sg.Button('Exit')
 
 window = sg.Window('Feet to Inches Converter', 
                    layout= [[feet_label,feet_input],
                    [inches_label,inches_input],
-                   [convert_button]])
+                   [convert_button, exit_button]])
                    
 window.read()
 window.close()
